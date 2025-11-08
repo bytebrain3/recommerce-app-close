@@ -3,6 +3,9 @@ import { createIcons, icons } from "lucide";
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import NavList from "./components/NavList";
+import Footer from "./components/footer";
+import Feature from "./components/Feature";
+import PreferDeal from "./components/PreferDeal";
 const imageList = [
   "https://script.viserlab.com/recommerce/assets/images/frontend/banner/684e8dc53b3cb1749978565.png",
   "https://script.viserlab.com/recommerce/assets/images/frontend/banner/684e8dca8e6ae1749978570.png",
@@ -29,8 +32,18 @@ function App() {
           <div class="flex flex-col" id="sliderContainer">
             
           </div>
+          <div class="my-[60px]">
+            ${Feature()}
+          </div>
+          <div class="my-[60px]">
+            ${PreferDeal()}
+          </div>
+
         </div>
       </div>
+
+    ${Footer()}
+
   </div>`;
 }
 
@@ -75,7 +88,7 @@ function HeroSlider({ imageList, currentImageIndex }) {
       <img
         id="heroSlider"
         src="${imageList[currentImageIndex]}"
-        class="object-cover w-full h-[450px] translate-x-full opacity-0 transition-all duration-500 ease-out"
+        class="object-cover w-full h-[450px] translate-x-full opacity-30 transition-all duration-500 ease-out"
       />
 
       <!-- Next Button -->
@@ -92,9 +105,8 @@ function HeroSlider({ imageList, currentImageIndex }) {
             (_, index) => `
               <div id="dot-${index}"
                 class="h-3 rounded-full transition-[width] duration-4000 border border-white ${
-                  index === currentImageIndex ? "w-8" : "w-3 bg-transparent"
+                  index === currentImageIndex ? "w-12" : "w-3 bg-transparent"
                 }"
-                style = "width : ${index === currentImageIndex ? "100%" : "0%"}"
                 >
               </div>`
           )
@@ -130,13 +142,9 @@ function animatedImage(callback) {
   let image = document.getElementById("heroSlider");
   if (!image) return;
 
-  image.classList.add("translate-x-0", "opacity-0");
+  image.classList.add("translate-x-0", "opacity-10");
 
   image.classList.remove("translate-x-full", "opacity-100");
-
-  const dot = document.getElementById(`dot-${currentImageIndex}`);
-
-  dot.classList.add();
 
   setTimeout(callback, 400);
 }

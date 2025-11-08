@@ -6,7 +6,7 @@ function Header() {
         <img src="/logo.png" class="w-[200px] h-[34px] object-cover"/>
 
         <!-- Search bar -->
-        <div class="flex flex-col items-center justify-between py-3 px-4 relative rounded-xl bg-[#f2f3f799]">
+        <div class="hidden md:flex flex-col items-center justify-between py-3 px-4 relative rounded-xl bg-[#f2f3f799]">
           <input 
             type="text"
             id="search" 
@@ -17,15 +17,18 @@ function Header() {
           <i data-lucide="search" class="absolute right-4 w-5 h-5"></i>
         </div>
 
+        
+        <i data-lucide="search" class="md:hidden"></i>
+
         <!-- Action icons -->
         <div class="flex flex-row items-center gap-x-8">
           <div class="flex flex-col items-center text-sm text-gray-700">
             <i data-lucide="shopping-cart"></i>
-            <span>Cart</span>
+            <span class="hidden md:block">Cart</span>
           </div>
           <div class="flex flex-col items-center text-sm text-gray-700">
             <i data-lucide="circle-user"></i>
-            <span>Login</span>
+            <span class="hidden md:block">Login</span>
           </div>
         </div>
       </div>

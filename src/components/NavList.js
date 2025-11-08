@@ -12,7 +12,7 @@ function NavList() {
   ];
 
   return `
-  <div class="flex mx-[280px] px-4">
+  <div class="hidden md:flex mx-[280px] px-4">
     <ul class="flex flex-wrap  max-w-7xl">
       ${navItems
         .map(

@@ -130,7 +130,7 @@ function Banner() {
   ];
 
   return `
-    <div class="bg-black flex flex-row items-center justify-center p-3">
+    <div class="hidden bg-black md:flex flex-row items-center justify-center p-3">
         <div class="flex flex-row items-center justify-between container max-w-7xl">
             <div class="flex flex-row items-center justify-between">
                 <ul class="flex flex-row items-center justify-between gap-12 text-white">
